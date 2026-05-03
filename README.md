@@ -1,6 +1,10 @@
 # Bitcoin 1-Hour Price Range Predictor
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://btcusdtpredictor-4jjdmbtv7er4fqpxxjprrk.streamlit.app/)
+
 A real-time Streamlit dashboard and backtesting framework that forecasts the 95% confidence interval for the next 1-hour Bitcoin (BTC/USDT) price using a Geometric Brownian Motion (GBM) model with volatility clustering and fat tails.
+
+**[🚀 View Live Dashboard Here](https://btcusdtpredictor-4jjdmbtv7er4fqpxxjprrk.streamlit.app/)**
 
 ## Features
 
@@ -37,6 +41,8 @@ A real-time Streamlit dashboard and backtesting framework that forecasts the 95%
    Open the provided local URL (usually `http://localhost:8501`) to view the dashboard. The application will fetch the latest price, compute the next hour's prediction, and display the performance of past predictions.
 
 ## Deployment
+
+The app is deployed live on Streamlit Community Cloud: **[Live Demo](https://btcusdtpredictor-4jjdmbtv7er4fqpxxjprrk.streamlit.app/)**
 
 This application is designed to be easily deployed on platforms like [Streamlit Community Cloud](https://share.streamlit.io/). 
 
