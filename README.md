@@ -1,38 +1,46 @@
-# BTCUSDT Predictor
+# Bitcoin 1-Hour Price Range Predictor
 
-This project contains a 1-hour Bitcoin price range forecaster based on a Geometric Brownian Motion (GBM) with volatility clustering and fat tails.
+A real-time Streamlit dashboard and backtesting framework that forecasts the 95% confidence interval for the next 1-hour Bitcoin (BTC/USDT) price using a Geometric Brownian Motion (GBM) model with volatility clustering and fat tails.
 
-## Files
-- `model.py`: Core forecasting logic extracted from the starter Colab.
-- `data.py`: Functions to fetch historical 1-hour bars from Binance API.
-- `backtest.py`: Script to run the 720-bar backtest (Part A).
-- `app.py`: Streamlit dashboard for real-time forecasting (Part B & C).
-- `requirements.txt`: Dependencies for the project.
+## Features
 
-## How to use
+- **Real-Time Forecasting**: Live predictions for the next hour's price range based on current market conditions.
+- **Strict Backtesting**: Framework to validate the model using 720 hours of historical data without lookahead bias.
+- **Interactive Dashboard**: Built with Streamlit and Plotly to visualize historical predictions alongside live market data.
+- **Live TradingView Integration**: Integrated interactive TradingView chart for real-time market monitoring.
+
+## Project Structure
+
+- `app.py`: Streamlit dashboard for real-time forecasting and visualization.
+- `backtest.py`: Script to run the historical 720-bar backtest.
+- `model.py`: Core mathematical forecasting logic.
+- `data.py`: Data fetching pipeline utilizing the Binance API.
+- `requirements.txt`: Python dependencies required for the project.
+
+## Installation & Usage
 
 1. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-2. **Run the Backtest (Part A)**:
+2. **Run the Backtest**:
    ```bash
    python backtest.py
    ```
-   This will generate `backtest_results.jsonl` containing the 720 predictions and print out the Coverage, Average Width, and Winkler Score.
+   This generates `backtest_results.jsonl` containing historical predictions and outputs key model metrics: Coverage (Target: ~95%), Average Width, and Winkler Score.
 
-3. **Run the Dashboard (Part B & C)**:
+3. **Launch the Dashboard**:
    ```bash
    streamlit run app.py
    ```
-   This will launch a local dashboard. The dashboard will show the latest price, the 95% predicted range for the next hour, historical predictions, and the backtest metrics.
+   Open the provided local URL (usually `http://localhost:8501`) to view the dashboard. The application will fetch the latest price, compute the next hour's prediction, and display the performance of past predictions.
 
-## Deploying to Streamlit Community Cloud
+## Deployment
 
-1. Commit these files to a public or private GitHub repository.
-2. Go to [share.streamlit.io](https://share.streamlit.io/).
-3. Click "New app".
-4. Select the repository, branch, and specify `app.py` as the main file path.
-5. Click "Deploy".
-6. Copy the URL of your deployed app and paste it into your submission form!
+This application is designed to be easily deployed on platforms like [Streamlit Community Cloud](https://share.streamlit.io/). 
+
+1. Push this repository to GitHub.
+2. Log in to Streamlit Community Cloud and click "New app".
+3. Select your repository and specify `app.py` as the main file path.
+4. Click "Deploy".
